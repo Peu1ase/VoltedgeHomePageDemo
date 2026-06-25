@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Why We Use Rapid Trigger? — VoltEdge</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Tangerine:wght@700&family=Pretendard:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .rt-hero{text-align:center; padding:120px 32px 30px;}
+  .rt-title{font-family:var(--font-script); font-size:54px; margin:3;
+    background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent;}
+  .rt-stage{
+    max-width:880px; margin:30px auto 0; position:relative; min-height:440px;
+    padding:0 32px;
+  }
+  .rt-card{
+    position:absolute; inset:0; opacity:0; transform:translateY(16px);
+    transition:opacity .6s ease, transform .6s ease; pointer-events:none;
+    display:grid; grid-template-columns:1fr 1fr; gap:30px; align-items:center;
+    background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:40px;
+  }
+  .rt-card.active{opacity:1; transform:translateY(0); pointer-events:auto;}
+  .rt-num{font-family:var(--font-display); color:var(--mint); font-size:13px; letter-spacing:.2em; margin-bottom:10px;}
+  .rt-card h3{font-family:var(--font-display); font-size:24px; margin:0 0 14px; line-height:1.3;}
+  .rt-card p{color:var(--text-dim); line-height:1.8; font-size:15px; margin:0;}
+  .rt-art{display:flex; align-items:center; justify-content:center;}
+  .rt-dots{display:flex; gap:8px; justify-content:center; margin-top:80px; position:relative; z-index:2;}
+  .rt-dots button{
+    width:10px;height:10px;border-radius:50%; border:none; background:var(--line); cursor:pointer; transition:.2s;
+  }
+  .rt-dots button.active{background:var(--grad); width:30px; border-radius:6px;}
+  @media (max-width:760px){
+    .rt-card{grid-template-columns:1fr; position:relative;}
+    .rt-stage{min-height:auto;}
+    .rt-dots{margin-top:24px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="logo">VoltEdge</a>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="rapidtrigger.html" class="active">Why Rapid Trigger</a>
+    <a href="products.html?cat=keyboard">Keyboards</a>
+    <a href="products.html?cat=mouse">Mouse</a>
+    <a href="products.html?cat=goods">Others</a>
+  </nav>
+  <div class="header-actions">
+    <a href="cart.html" class="icon-btn" aria-label="장바구니">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+    </a>
+    <a href="login.html" class="icon-btn" aria-label="로그인">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    </a>
+  </div>
+</header>
+
+<section class="rt-hero">
+  <div class="eyebrow">VoltEdge Philosophy</div>
+  <h1 class="rt-title">Why We Use Rapid Trigger?</h1>
+  <p class="lead" style="margin:18px auto 0;">10초마다 자동으로 전환됩니다 — 우리가 래피드 트리거를 고수하는 세 가지 이유</p>
+</section>
+
+<div class="rt-stage" id="rtStage">
+
+  <div class="rt-card active" data-card="0">
+    <div>
+      <div class="rt-num">01 / IMMEDIATE RESPONSE</div>
+      <h3>즉각적인 반응 속도</h3>
+      <p>입력 지점과 해제 지점을 소프트웨어적으로 제어하여, 기존 기계식 키보드보다
+        압도적으로 빠른 입력 및 중단 속도를 제공함으로써 찰나의 순간에 게임 환경에서
+        우위를 점하기 위함입니다.</p>
+    </div>
+    <div class="rt-art">
+      <svg viewBox="0 0 220 220" width="220" height="220">
+        <circle cx="110" cy="110" r="90" fill="none" stroke="#1f2733" stroke-width="2"/>
+        <circle cx="110" cy="110" r="90" fill="none" stroke="#007bff" stroke-width="4" stroke-dasharray="40 500" stroke-linecap="round">
+          <animateTransform attributeName="transform" type="rotate" from="0 110 110" to="360 110 110" dur="1.6s" repeatCount="indefinite"/>
+        </circle>
+        <line x1="110" y1="170" x2="110" y2="50" stroke="#7fffdd" stroke-width="4">
+          <animate attributeName="y2" values="170;50;170" dur="0.7s" repeatCount="indefinite"/>
+        </line>
+      </svg>
+    </div>
+  </div>
+
+  <div class="rt-card" data-card="1">
+    <div>
+      <div class="rt-num">02 / CUSTOM PERFORMANCE</div>
+      <h3>사용자 맞춤형 입력 민감도</h3>
+      <p>미세하게 조정할 수 있는 '커스텀 퍼포먼스'를 제공하여 기기에 사용자를 맞추는
+        것이 아닌, 사용자의 역량을 극대화하는 방향으로 설계합니다.</p>
+    </div>
+    <div class="rt-art">
+      <svg viewBox="0 0 220 220" width="220" height="220">
+        <g stroke="#1f2733" stroke-width="2">
+          <line x1="30" y1="190" x2="30" y2="30"/><line x1="30" y1="190" x2="190" y2="190"/>
+        </g>
+        <polyline points="30,150 70,110 110,140 150,60 190,90" fill="none" stroke="#007bff" stroke-width="3">
+          <animate attributeName="points"
+            values="30,150 70,110 110,140 150,60 190,90;
+                    30,170 70,80 110,100 150,40 190,120;
+                    30,150 70,110 110,140 150,60 190,90"
+            dur="3s" repeatCount="indefinite"/>
+        </polyline>
+        <circle cx="150" cy="60" r="5" fill="#7fffdd"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="rt-card" data-card="2">
+    <div>
+      <div class="rt-num">03 / NO-CONTACT DURABILITY</div>
+      <h3>무접점 방식의 내구성</h3>
+      <p>물리적 접점이 없는 자석축 기반의 기술을 사용하여 마모로 인한 성능 저하와
+        중복 입력을 차단하며, 긴박한 상황에서도 변함없는 최상의 퍼포먼스를 보장합니다.</p>
+    </div>
+    <div class="rt-art">
+      <svg viewBox="0 0 220 220" width="220" height="220">
+        <rect x="70" y="40" width="80" height="140" rx="14" fill="none" stroke="#1f2733" stroke-width="2"/>
+        <circle cx="110" cy="80" r="14" fill="none" stroke="#007bff" stroke-width="3"/>
+        <circle cx="110" cy="150" r="14" fill="none" stroke="#7fffdd" stroke-width="3"/>
+        <line x1="110" y1="94" x2="110" y2="136" stroke="#7fffdd" stroke-width="2" stroke-dasharray="4 4">
+          <animate attributeName="stroke-dashoffset" values="0;16" dur="1s" repeatCount="indefinite"/>
+        </line>
+      </svg>
+    </div>
+  </div>
+
+  <div class="rt-dots" id="rtDots">
+    <button class="active" data-i="0" aria-label="1번 카드"></button>
+    <button data-i="1" aria-label="2번 카드"></button>
+    <button data-i="2" aria-label="3번 카드"></button>
+  </div>
+</div>
+
+<div style="height:70px;"></div>
+
+<footer class="site-footer">
+  <div class="footer-brand">VoltEdge</div>
+  <div class="social-links">
+    <a href="#">Instagram</a><a href="#">Threads</a><a href="#">X</a><a href="#">Facebook</a><a href="#">Youtube</a>
+  </div>
+  <div class="footer-copy">© 2026 VoltEdge. All rights reserved.</div>
+</footer>
+
+<script>
+  const cards = document.querySelectorAll('.rt-card');
+  const dots = document.querySelectorAll('#rtDots button');
+  let i = 0, timer;
+  function show(n){
+    cards.forEach((c,idx)=>c.classList.toggle('active', idx===n));
+    dots.forEach((d,idx)=>d.classList.toggle('active', idx===n));
+    i = n;
+  }
+  function start(){
+    timer = setInterval(()=>{ show((i+1) % cards.length); }, 10000);
+  }
+  dots.forEach(d=>d.addEventListener('click', ()=>{
+    clearInterval(timer); show(+d.dataset.i); start();
+  }));
+  start();
+</script>
+</body>
+</html>

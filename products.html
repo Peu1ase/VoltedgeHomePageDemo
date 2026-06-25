@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Selling Page — VoltEdge</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Tangerine:wght@700&family=Pretendard:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .shop-hero{text-align:center; padding:60px 32px 10px;}
+  .shop-title{font-family:var(--font-script); font-size:46px; margin:0;
+    background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent;}
+  .cat-tabs{display:flex; justify-content:center; gap:10px; margin:26px 0 10px; flex-wrap:wrap;}
+  .cat-tabs a{
+    padding:9px 20px; border:1px solid var(--line); border-radius:999px;
+    font-family:var(--font-display); font-size:12px; letter-spacing:.08em; color:var(--text-dim);
+  }
+  .cat-tabs a.active{background:var(--grad); color:#020306; border: none; padding: 10px 21px;}
+
+  .product-scroll{
+    max-width:1100px; margin:30px auto 0; padding:0 32px 80px;
+    max-height:680px; overflow-y:auto;
+  }
+  .product-scroll::-webkit-scrollbar{width:8px;}
+  .product-scroll::-webkit-scrollbar-thumb{background:var(--grad); border-radius:6px;}
+  .product-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+  .product-card{
+    background:var(--panel); border:1px solid var(--line); border-radius:12px;
+    padding:26px; display:flex; flex-direction:column; gap:14px; transition:.2s;
+  }
+  .product-card:hover{border-color:var(--volt-blue);}
+  .product-thumb{
+    height:160px; border-radius:8px; background:var(--panel-2);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .product-name{font-family:var(--font-display); font-size:15px; margin:0;}
+  .product-meta{color:var(--text-dim); font-size:12px;}
+  .product-price{font-family:var(--font-display); font-size:18px; color:var(--mint);}
+  .product-foot{display:flex; justify-content:space-between; align-items:center;}
+  @media (max-width:760px){ .product-grid{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="logo">VoltEdge</a>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="rapidtrigger.html">Why Rapid Trigger</a>
+    <a href="products.html?cat=keyboard" id="navKeyboard">Keyboards</a>
+    <a href="products.html?cat=mouse" id="navMouse">Mouse</a>
+    <a href="products.html?cat=goods" id="navGoods">Others</a>
+  </nav>
+  <div class="header-actions">
+    <a href="cart.html" class="icon-btn" aria-label="장바구니">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+    </a>
+    <a href="login.html" class="icon-btn" aria-label="로그인">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    </a>
+  </div>
+</header>
+
+<div class="shop-hero">
+  <div class="eyebrow" id="catEyebrow">Category</div>
+  <h1 class="shop-title" id="shopTitle">OOO Selling Page</h1>
+  <div class="cat-tabs">
+    <a href="products.html?cat=keyboard" data-cat="keyboard">Keyboard</a>
+    <a href="products.html?cat=mouse" data-cat="mouse">Mouse</a>
+    <a href="products.html?cat=goods" data-cat="goods">Others</a>
+  </div>
+</div>
+
+<div class="product-scroll">
+  <div class="product-grid" id="productGrid"></div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-brand">VoltEdge</div>
+  <div class="social-links">
+    <a href="#">Instagram</a><a href="#">Threads</a><a href="#">X</a><a href="#">Facebook</a><a href="#">Youtube</a>
+  </div>
+  <div class="footer-copy">© 2026 VoltEdge. All rights reserved.</div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+const CATALOG = {
+  keyboard: {
+    label: 'Keyboard Selling Page',
+    items: [
+      {id:'kb001', name:'VoltEdge TenkeyLess KeyBoard 001', color:'Black', price:64900},
+      {id:'kb002', name:'VoltEdge FullSize KeyBoard 002', color:'White', price:109900},
+      {id:'kb003', name:'VoltEdge Compact 60% KeyBoard 003', color:'Mint Blue', price:87900},
+      {id:'kb004', name:'VoltEdge Pro Magnetic KeyBoard 004', color:'Electric Blue', price:134900},
+    ]
+  },
+  mouse: {
+    label: 'Mouse Selling Page',
+    items: [
+      {id:'ms001', name:'VoltEdge Original Mouse 001', color:'Mint Blue', price:29900},
+      {id:'ms002', name:'VoltEdge Lightweight Mouse 002', color:'Black', price:47900},
+      {id:'ms003', name:'VoltEdge Wireless Pro Mouse 003', color:'White', price:58900},
+      {id:'ms004', name:'VoltEdge Magnetic Switch Mouse 004', color:'Electric Blue', price:84900},
+    ]
+  },
+  goods: {
+    label: 'Others Selling Page',
+    items: [
+      {id:'gd001', name:'VoltEdge Mousepad (260*310*2mm)', color:'Black', price:5900},
+      {id:'gd002', name:'VoltEdge Keycap Set (Num Key)', color:'Mint Blue', price:19900},
+      {id:'gd003', name:'VoltEdge Wrist Rest', color:'Black', price:14900},
+      {id:'gd004', name:'VoltEdge Power Bank', color:'Electric Blue', price:24900},
+    ]
+  }
+};
+
+const params = new URLSearchParams(location.search);
+const cat = params.get('cat') in CATALOG ? params.get('cat') : 'keyboard';
+const data = CATALOG[cat];
+
+document.getElementById('catEyebrow').textContent = cat.toUpperCase();
+document.getElementById('shopTitle').textContent = data.label;
+document.querySelectorAll('.cat-tabs a').forEach(a=>{
+  a.classList.toggle('active', a.dataset.cat === cat);
+});
+
+const grid = document.getElementById('productGrid');
+grid.innerHTML = data.items.map((p,n)=>`
+  <div class="product-card">
+    <div class="product-thumb">
+      <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#7fffdd" stroke-width="1.3">
+        ${cat==='keyboard' ? '<rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M6 14h12"/>'
+        : cat==='mouse' ? '<rect x="6" y="3" width="12" height="18" rx="6"/><line x1="12" y1="3" x2="12" y2="9"/>'
+        : '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/>'}
+      </svg>
+    </div>
+    <h3 class="product-name">${n+1}번 제품 — ${p.name}</h3>
+    <div class="product-meta">Color: ${p.color}</div>
+    <div class="product-foot">
+      <span class="product-price">₩${p.price.toLocaleString()}</span>
+      <button class="btn btn-primary" data-id="${p.id}">담기</button>
+    </div>
+  </div>
+`).join('');
+
+grid.querySelectorAll('button[data-id]').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const item = data.items.find(p=>p.id===btn.dataset.id);
+    addToCart(item);
+    btn.textContent = '담김 ✓';
+    setTimeout(()=>btn.textContent='담기', 1200);
+  });
+});
+</script>
+</body>
+</html>
